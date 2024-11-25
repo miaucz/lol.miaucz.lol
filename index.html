@@ -62,7 +62,7 @@ p {
             color: black;
             position: fixed; /* Stała pozycja względem ekranu */
             bottom: 0px; /* Odległość od dolnej krawędzi */
-            right: 0px;
+            right: 5px;
         }
     </style>
 </head>
@@ -85,7 +85,7 @@ p {
             try {
                 const response = await fetch('https://api.ipify.org?format=json');
                 const data = await response.json();
-                document.getElementById('ip-address').textContent = "Twój adres IP to: " + data.ip;
+                document.getElementById('ip-address').textContent = "" + data.ip;
             } catch (error) {
                 document.getElementById('ip-address').textContent = "Nie udało się pobrać adresu IP.";
                 console.error("Błąd podczas pobierania IP:", error);
