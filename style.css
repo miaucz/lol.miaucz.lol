@@ -176,4 +176,11 @@ p {
         text-align: center;
         align-items: center;
     }
+{
+.fullscreen-gif {
+        background: url('silly.gif') center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        }
   }
