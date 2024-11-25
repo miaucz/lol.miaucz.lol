@@ -9,19 +9,60 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .fullscreen-gif {
+            background: url('silly.gif') center center;
+            background-repeat: repeat;
+            background-size: cover; /* Dopasowanie GIF-a */
+            width: 100%;
+            height: 100%;
+            position: fixed; /* Ustawienie na cały ekran */
+            z-index: -1; /* Umieszczenie w tle */
+        }
+
+        .header {
+            background-color: #eceff4;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5e81ac;
+        }
+
+        .ip-container {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            color: #2e3440;
+        }
+    </style>
 </head>
 
 <body>
     <div class="header">
         <span>
-            <a href="." target="_self"
-                style="color: #5e81ac">
+            <a href="miaucz.lol" target="_self" style="color: #5e81ac">
                 <img src="pfp.jpg" width="70" height="70" alt="">
             </a>
             <p>miaucz.lol</p>
         </span>
     </div>
+
     <div class="fullscreen-gif"></div>
     <div class="ip-container" id="ip-address">Ładowanie...</div>
 
@@ -30,7 +71,7 @@
             try {
                 const response = await fetch('https://api.ipify.org?format=json');
                 const data = await response.json();
-                document.getElementById('ip-address').textContent = data.ip;
+                document.getElementById('ip-address').textContent = "Twój adres IP to: " + data.ip;
             } catch (error) {
                 document.getElementById('ip-address').textContent = "Nie udało się pobrać adresu IP.";
                 console.error("Błąd podczas pobierania IP:", error);
@@ -40,9 +81,4 @@
         getIPAddress();
     </script>
 </body>
-</html>
-
-        </div>
-</body>
-
 </html>
