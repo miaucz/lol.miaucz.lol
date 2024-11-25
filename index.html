@@ -27,20 +27,29 @@
             z-index: -1; /* Umieszczenie w tle */
         }
 
-        .header {
-            background-color: #eceff4;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.header p {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
 
-        .header p {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-            color: #5e81ac;
-        }
+.header img,
+p {
+    vertical-align: middle;
+    display: inline;
+    padding: 15px;
+    border-radius: 25%;
+    -webkit-transition-property: all; 
+    -webkit-transition-duration: 0.4s; 
+    -webkit-transition-timing-function: ease;
+}
+.header img:hover {
+    transform: scale(1.10);
+}
+
+.header {
+    height: 100px;
+    background: #5e81ac;
+}
 
         .ip-container {
             position: relative;
