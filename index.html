@@ -78,7 +78,7 @@ p {
     </div>
 
     <div class="fullscreen-gif"></div>
-    <div class="ip-container" id="ip-address">Ładowanie...</div>
+    <div class="ip-container" id="ip-address">Loading...</div>
 
     <script>
         async function getIPAddress() {
@@ -87,8 +87,8 @@ p {
                 const data = await response.json();
                 document.getElementById('ip-address').textContent = "" + data.ip;
             } catch (error) {
-                document.getElementById('ip-address').textContent = "Nie udało się pobrać adresu IP.";
-                console.error("Błąd podczas pobierania IP:", error);
+                document.getElementById('ip-address').textContent = "Failed to retrieve IP address.";
+                console.error("Error getting IP:", error);
             }
         }
 
